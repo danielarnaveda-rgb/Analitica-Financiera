@@ -125,7 +125,7 @@ cuentas_dict = dict(zip(df_cuentas['nombre'], df_cuentas['id'])) if not df_cuent
 with st.sidebar.form("form_alta_sidebar"):
     cuenta_sel = st.selectbox("Cuenta", list(cuentas_dict.keys())) if cuentas_dict else None
     tipo_mov = st.selectbox("Tipo", ["Egreso", "Ingreso"])
-    cat_opciones = ['Insumos', 'Servicios', 'Sueldos', 'Mantenimiento', 'Impuestos'] if tipo_mov == "Egreso" else ['Ventas', 'Cobro Servicios', 'Rendimientos']
+    cat_opciones = ['Insumos', 'Servicios', 'Sueldos', 'Mantenimiento', 'Impuestos'] if tipo_mov == "Egreso" else ['insumos', 'servicios', 'Sueldos' 'Mantenimiento' 'Impuestos']
     cat_sel = st.selectbox("Categoría", cat_opciones)
     monto_in = st.number_input("Monto ($)", min_value=1.0, step=100.0)
     fecha_in = st.date_input("Fecha", datetime.now())
